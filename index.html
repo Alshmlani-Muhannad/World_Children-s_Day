@@ -1,0 +1,1685 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>احتفالية اليوم العالمي للطفل - تنفيذ المعلمة: سهام الزهراني</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Tajawal', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: linear-gradient(135deg, #FCE7F3 0%, #E0F2FE 45%, #FEF9C3 100%);
+            color: #1E293B;
+            overflow-x: hidden;
+            user-select: none;
+        }
+
+        /* حركات كرتونية مبهجة */
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-12px) rotate(3deg); }
+        }
+        @keyframes pulseSoft {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.04); }
+        }
+        @keyframes waveBar {
+            0%, 100% { height: 8px; }
+            50% { height: 26px; }
+        }
+        @keyframes confettiFall {
+            0% { transform: translateY(-20px) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(105vh) rotate(720deg); opacity: 0; }
+        }
+        @keyframes popIn {
+            0% { transform: scale(0.85); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .animate-float-slow { animation: floatSlow 5s ease-in-out infinite; }
+        .animate-pulse-soft { animation: pulseSoft 2.2s ease-in-out infinite; }
+        .animate-pop { animation: popIn 0.25s ease-out forwards; }
+
+        .kid-btn {
+            transition: transform 0.14s ease, box-shadow 0.14s ease, background-color 0.14s ease;
+            box-shadow: 0 5px 0 rgba(15, 23, 42, 0.14);
+        }
+        .kid-btn:hover {
+            transform: translateY(-1px);
+        }
+        .kid-btn:active {
+            transform: translateY(3px);
+            box-shadow: 0 2px 0 rgba(15, 23, 42, 0.14);
+        }
+
+        /* أبيات الأنشودة */
+        .lyric-card {
+            transition: all 0.25s ease;
+            cursor: pointer;
+        }
+        .lyric-card.active-lyric {
+            background: linear-gradient(90deg, #FEF08A 0%, #FBCFE8 100%);
+            border-color: #EC4899;
+            color: #831843;
+            transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(236, 72, 153, 0.22);
+        }
+
+        .wave-bar {
+            width: 5px;
+            border-radius: 9999px;
+            background: linear-gradient(to top, #EC4899, #8B5CF6);
+            animation: waveBar 0.55s ease-in-out infinite;
+        }
+
+        /* بطاقات التطابق */
+        .memory-tile {
+            min-height: 84px;
+            perspective: 800px;
+            cursor: pointer;
+        }
+        .memory-tile-inner {
+            position: relative;
+            width: 100%;
+            height: 84px;
+            transition: transform 0.35s ease;
+            transform-style: preserve-3d;
+        }
+        .memory-tile.flipped .memory-tile-inner,
+        .memory-tile.matched .memory-tile-inner {
+            transform: rotateY(180deg);
+        }
+        .memory-face {
+            position: absolute;
+            inset: 0;
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backface-visibility: hidden;
+        }
+        .memory-face-back {
+            transform: rotateY(180deg);
+        }
+
+        /* قصاصات الفوز */
+        .confetti-piece {
+            position: fixed;
+            top: -16px;
+            width: 11px;
+            height: 11px;
+            z-index: 9999;
+            pointer-events: none;
+            animation: confettiFall linear forwards;
+        }
+    </style>
+</head>
+<body class="min-h-screen pb-14 relative">
+
+    <!-- خلفيات احتفالية ناعمة -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+        <div class="absolute top-6 right-8 text-5xl opacity-75 animate-float-slow">🎈</div>
+        <div class="absolute top-12 left-10 text-5xl opacity-75 animate-float-slow">🌟</div>
+        <div class="absolute bottom-24 right-10 text-5xl opacity-70 animate-float-slow">🌈</div>
+        <div class="absolute bottom-16 left-12 text-5xl opacity-70 animate-float-slow">🧸</div>
+    </div>
+
+    <div class="relative z-10 max-w-6xl mx-auto px-4 pt-6">
+        <!-- الترويسة الرئيسية -->
+        <header class="bg-white/95 backdrop-blur-md rounded-3xl p-6 md:p-8 shadow-xl border-4 border-pink-300 mb-6">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-5">
+                <div class="text-center lg:text-right space-y-2">
+                    <div class="inline-flex items-center gap-2 bg-amber-100 text-amber-900 font-black px-4 py-1.5 rounded-full text-sm md:text-base border-2 border-amber-300">
+                        <span>🎉</span>
+                        <span>احتفالية اليوم العالمي للطفل</span>
+                        <span>🎈</span>
+                    </div>
+                    <h1 class="text-3xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-l from-pink-500 via-purple-600 to-sky-500 leading-tight">
+                        عالمنا الجميل.. عالم الطفولة السعيدة
+                    </h1>
+                    <p class="text-slate-600 font-bold text-base md:text-lg">
+                        أنشودة موسيقية مبهجة، ألعاب تفاعلية شيّقة، ولوحة متسابقين، وبطاقات لحقوقنا الجميلة!
+                    </p>
+                    <div class="pt-1">
+                        <span class="inline-flex items-center gap-2 bg-gradient-to-l from-purple-100 via-pink-100 to-sky-100 text-purple-900 font-black px-5 py-2 rounded-2xl text-sm md:text-base border-2 border-purple-300 shadow-sm">
+                            <span>👩‍🏫</span>
+                            <span>تنفيذ المعلمة: سهام الزهراني</span>
+                            <span>✨</span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap items-center justify-center gap-3">
+                    <div class="bg-yellow-100 border-2 border-yellow-400 text-yellow-950 font-black px-5 py-3 rounded-2xl text-base md:text-lg shadow-sm">
+                        ⭐ نجوم الاحتفال: <span id="globalStarsDisplay">0</span>
+                    </div>
+                    <button type="button" onclick="celebrateWithConfetti()" class="kid-btn bg-gradient-to-l from-pink-500 to-purple-500 text-white font-black px-5 py-3 rounded-2xl border-2 border-white text-base md:text-lg">
+                        🎊 احتفال سريع
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- شريط التنقل بين الأقسام الرئيسية -->
+        <nav class="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-5 mb-7">
+            <button type="button" id="mainTab-song" onclick="switchMainSection('song')" class="kid-btn bg-pink-500 text-white font-black text-lg md:text-xl py-3.5 px-4 rounded-2xl border-4 border-white flex items-center justify-center gap-2">
+                <span>🎵</span>
+                <span>أنشودة الطفل (موسيقى)</span>
+            </button>
+            <button type="button" id="mainTab-games" onclick="switchMainSection('games')" class="kid-btn bg-white text-sky-700 font-black text-lg md:text-xl py-3.5 px-4 rounded-2xl border-4 border-sky-300 flex items-center justify-center gap-2">
+                <span>🎮</span>
+                <span>الألعاب التفاعلية (7)</span>
+            </button>
+            <button type="button" id="mainTab-rights" onclick="switchMainSection('rights')" class="kid-btn bg-white text-emerald-700 font-black text-lg md:text-xl py-3.5 px-4 rounded-2xl border-4 border-emerald-300 flex items-center justify-center gap-2">
+                <span>🌈</span>
+                <span>بطاقات حقوق الطفل</span>
+            </button>
+        </nav>
+
+        <!-- ======================================================= -->
+        <!-- القسم الأول: الأنشودة (موسيقى فقط عبر Web Audio API)     -->
+        <!-- ======================================================= -->
+        <section id="section-song" class="bg-white/95 rounded-3xl p-6 md:p-8 shadow-xl border-4 border-pink-300 mb-8">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-4 border-b-2 border-dashed border-pink-200 pb-5 mb-6">
+                <div class="flex items-center gap-3 text-center sm:text-right">
+                    <div class="w-16 h-16 shrink-0 rounded-2xl bg-pink-100 border-2 border-pink-300 flex items-center justify-center text-3xl animate-pulse-soft">
+                        🎼
+                    </div>
+                    <div>
+                        <h2 class="text-2xl md:text-3xl font-black text-pink-600">أنشودة: أنا طفلٌ أحب الحياة</h2>
+                        <p class="text-slate-600 font-bold text-sm md:text-base">
+                            موسيقى لحنية وإيقاع طفولي بسيط فقط (بدون أي نطق صوتي) — اضغط على أي بيت لتظليله وبدء اللحن منه.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- أزرار التحكم بالأنشودة الموسيقية -->
+                <div class="flex flex-wrap items-center justify-center gap-2.5">
+                    <button type="button" onclick="playSongMusic()" class="kid-btn bg-emerald-500 hover:bg-emerald-600 text-white font-black px-4 py-2.5 rounded-2xl border-2 border-white flex items-center gap-1.5">
+                        <span>▶️</span>
+                        <span>تشغيل الأنشودة</span>
+                    </button>
+                    <button type="button" onclick="pauseSongMusic()" class="kid-btn bg-amber-400 hover:bg-amber-500 text-slate-900 font-black px-4 py-2.5 rounded-2xl border-2 border-white flex items-center gap-1.5">
+                        <span>⏸️</span>
+                        <span>إيقاف مؤقت</span>
+                    </button>
+                    <button type="button" onclick="restartSongMusic()" class="kid-btn bg-sky-500 hover:bg-sky-600 text-white font-black px-4 py-2.5 rounded-2xl border-2 border-white flex items-center gap-1.5">
+                        <span>🔁</span>
+                        <span>إعادة من البداية</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- مؤشر تظليل البيت الحالي والموجات اللحنية -->
+            <div class="bg-gradient-to-l from-pink-50 via-purple-50 to-sky-50 rounded-2xl p-4 border-2 border-pink-200 mb-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div class="space-y-1 text-center sm:text-right">
+                    <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2">
+                        <span id="songStatusBadge" class="inline-block bg-pink-500 text-white font-black text-xs px-3 py-1 rounded-full">
+                            جاهز للعزف
+                        </span>
+                        <span class="text-xs font-extrabold text-purple-800">
+                            البيت الحالي: <strong id="currentVerseNumber">1</strong> من 6
+                        </span>
+                    </div>
+                    <p id="currentVerseBanner" class="text-base md:text-lg font-black text-slate-800">
+                        أَنَا طِفْلٌ أُحِبُّ الحَيَاةْ، أَرْسُمُ البَسْمَةَ فِي كُلِّ اتِّجَاهْ 🌸
+                    </p>
+                </div>
+
+                <div id="songWaveIndicator" class="hidden items-end gap-1.5 h-8 px-4 py-1 bg-white rounded-xl border border-pink-200">
+                    <span class="wave-bar" style="animation-delay: 0s;"></span>
+                    <span class="wave-bar" style="animation-delay: 0.12s;"></span>
+                    <span class="wave-bar" style="animation-delay: 0.24s;"></span>
+                    <span class="wave-bar" style="animation-delay: 0.36s;"></span>
+                    <span class="wave-bar" style="animation-delay: 0.18s;"></span>
+                </div>
+            </div>
+
+            <!-- أبيات الأنشودة -->
+            <div id="songVersesGrid" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div onclick="selectAndPlayVerse(0)" class="lyric-card active-lyric rounded-2xl p-4 border-2 border-pink-200 bg-pink-50/70 text-center text-lg md:text-xl font-black">
+                    أَنَا طِفْلٌ أُحِبُّ الحَيَاةْ، أَرْسُمُ البَسْمَةَ فِي كُلِّ اتِّجَاهْ 🌸
+                </div>
+                <div onclick="selectAndPlayVerse(1)" class="lyric-card rounded-2xl p-4 border-2 border-sky-200 bg-sky-50/70 text-center text-lg md:text-xl font-black text-slate-700">
+                    حَقِّي أَنْ أَتَعَلَّمَ وَأَقْرَأْ، وَبِالعِلْمِ وَالنُّورِ أَبْدَأْ 📚✨
+                </div>
+                <div onclick="selectAndPlayVerse(2)" class="lyric-card rounded-2xl p-4 border-2 border-amber-200 bg-amber-50/70 text-center text-lg md:text-xl font-black text-slate-700">
+                    حَقِّي أَنْ أَلْعَبَ وَأَمْرَحْ، وَبِقَوْسِ قُزَحَ أَفْرَحْ 🌈🎈
+                </div>
+                <div onclick="selectAndPlayVerse(3)" class="lyric-card rounded-2xl p-4 border-2 border-emerald-200 bg-emerald-50/70 text-center text-lg md:text-xl font-black text-slate-700">
+                    فِي أَمَانٍ وَحُبٍّ وَسَلَامْ، نَبْنِي غَدَنَا بِأَحْلَى الأَحْلَامْ 🕊️💖
+                </div>
+                <div onclick="selectAndPlayVerse(4)" class="lyric-card rounded-2xl p-4 border-2 border-purple-200 bg-purple-50/70 text-center text-lg md:text-xl font-black text-slate-700">
+                    نَحْنُ أَطْفَالُ العَالَمِ نُنْشِدُ، لِلْمُسْتَقْبَلِ المُشْرِقِ نَصْعَدُ 🌟👧
+                </div>
+                <div onclick="selectAndPlayVerse(5)" class="lyric-card rounded-2xl p-4 border-2 border-orange-200 bg-orange-50/70 text-center text-lg md:text-xl font-black text-slate-700">
+                    كُلُّ عَامٍ وَنَحْنُ بِخَيْرٍ، نَمْلَأُ الدُّنْيَا حُبّاً وَنُورْ 🎊💐
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================================= -->
+        <!-- القسم الثاني: الألعاب التفاعلية (7 ألعاب) + لوحة المتسابقين -->
+        <!-- ======================================================= -->
+        <section id="section-games" class="hidden space-y-8">
+            <!-- بطاقة الألعاب التفاعلية -->
+            <div class="bg-white/95 rounded-3xl p-6 md:p-8 shadow-xl border-4 border-sky-300">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-4 border-b-2 border-dashed border-sky-200 pb-5 mb-5">
+                    <div class="text-center md:text-right">
+                        <h2 class="text-2xl md:text-3xl font-black text-sky-700">🎮 الألعاب التفاعلية الممتعة</h2>
+                        <p class="text-slate-600 font-bold text-sm md:text-base">
+                            اللعبة الحالية: <span id="currentGameTitleLabel" class="text-pink-600 font-black">لعبة تطابق البطاقات</span>
+                        </p>
+                    </div>
+
+                    <!-- مؤثرات الفوز والخسارة المستقلة -->
+                    <div class="flex flex-wrap items-center justify-center gap-2">
+                        <button type="button" id="sfxToggleBtn" onclick="toggleSfx()" class="kid-btn bg-emerald-500 text-white font-black text-sm px-4 py-2 rounded-xl border-2 border-white">
+                            🔔 المؤثرات: مفعّلة
+                        </button>
+                        <button type="button" onclick="testWinOutcome()" class="kid-btn bg-amber-100 hover:bg-amber-200 text-amber-950 font-black text-xs md:text-sm px-3.5 py-2 rounded-xl border-2 border-amber-300">
+                            🏆 جرّب صوت الفوز
+                        </button>
+                        <button type="button" onclick="testLoseOutcome()" class="kid-btn bg-rose-100 hover:bg-rose-200 text-rose-900 font-black text-xs md:text-sm px-3.5 py-2 rounded-xl border-2 border-rose-300">
+                            💫 جرّب صوت الخسارة
+                        </button>
+                    </div>
+                </div>
+
+                <!-- تبويبات الألعاب السبعة -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-2.5 mb-5">
+                    <button type="button" id="gameTab-memory" onclick="selectGame('memory')" class="kid-btn bg-sky-500 text-white font-black text-xs md:text-sm py-3 px-2 rounded-2xl border-2 border-white">
+                        🃏 تطابق البطاقات
+                    </button>
+                    <button type="button" id="gameTab-balloons" onclick="selectGame('balloons')" class="kid-btn bg-white text-rose-700 font-black text-xs md:text-sm py-3 px-2 rounded-2xl border-2 border-rose-200">
+                        🎈 فرقعة البالونات
+                    </button>
+                    <button type="button" id="gameTab-riddles" onclick="selectGame('riddles')" class="kid-btn bg-white text-amber-700 font-black text-xs md:text-sm py-3 px-2 rounded-2xl border-2 border-amber-200">
+                        🧩 تحدي الألغاز
+                    </button>
+                    <button type="button" id="gameTab-canvas" onclick="selectGame('canvas')" class="kid-btn bg-white text-purple-700 font-black text-xs md:text-sm py-3 px-2 rounded-2xl border-2 border-purple-200">
+                        🎨 مرسم التلوين
+                    </button>
+                    <button type="button" id="gameTab-catch" onclick="selectGame('catch')" class="kid-btn bg-white text-emerald-700 font-black text-xs md:text-sm py-3 px-2 rounded-2xl border-2 border-emerald-200">
+                        ⭐ صيد النجوم والهدايا
+                    </button>
+                    <button type="button" id="gameTab-pattern" onclick="selectGame('pattern')" class="kid-btn bg-white text-pink-700 font-black text-xs md:text-sm py-3 px-2 rounded-2xl border-2 border-pink-200">
+                        🌈 ترتيب الأنماط
+                    </button>
+                    <button type="button" id="gameTab-quiz" onclick="selectGame('quiz')" class="kid-btn bg-white text-indigo-700 font-black text-xs md:text-sm py-3 px-2 rounded-2xl border-2 border-indigo-200">
+                        ⚡ اختبار سريع
+                    </button>
+                </div>
+
+                <!-- لافتة التأكيد البصري للفوز والخسارة -->
+                <div id="outcomeBanner" class="hidden mb-5 p-4 rounded-2xl border-4 font-black text-base md:text-lg text-center animate-pop"></div>
+
+                <!-- 1. لعبة تطابق البطاقات -->
+                <div id="gamePanel-memory" class="bg-sky-50/80 rounded-3xl p-5 border-2 border-sky-200">
+                    <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+                        <div class="flex flex-wrap items-center gap-2 font-black text-sm md:text-base">
+                            <span class="bg-white px-3.5 py-1.5 rounded-xl border border-sky-200 text-sky-800">
+                                الأزواج المتطابقة: <span id="memoryMatchedCount">0</span> / 6
+                            </span>
+                            <span class="bg-white px-3.5 py-1.5 rounded-xl border border-sky-200 text-slate-700">
+                                المحاولات: <span id="memoryAttemptsCount">0</span>
+                            </span>
+                        </div>
+                        <button type="button" onclick="initMemoryGame()" class="kid-btn bg-sky-500 text-white font-black px-4 py-2 rounded-xl">
+                            🔄 بطاقات جديدة
+                        </button>
+                    </div>
+                    <div id="memoryBoard" class="grid grid-cols-3 sm:grid-cols-4 gap-3 max-w-2xl mx-auto"></div>
+                </div>
+
+                <!-- 2. لعبة فرقعة البالونات -->
+                <div id="gamePanel-balloons" class="hidden bg-rose-50/80 rounded-3xl p-5 border-2 border-rose-200 text-center">
+                    <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+                        <div class="flex flex-wrap items-center gap-2 font-black text-sm md:text-base">
+                            <span class="bg-white px-3.5 py-1.5 rounded-xl border border-rose-200 text-rose-700">
+                                النقاط: <span id="balloonPoints">0</span> / 40
+                            </span>
+                            <span class="bg-white px-3.5 py-1.5 rounded-xl border border-rose-200 text-amber-800">
+                                البالون المطلوب: <span id="balloonTargetLabel" class="text-pink-600">🎈 أحمر</span>
+                            </span>
+                        </div>
+                        <button type="button" onclick="initBalloonGame()" class="kid-btn bg-rose-500 text-white font-black px-4 py-2 rounded-xl">
+                            🔄 جولة بالونات جديدة
+                        </button>
+                    </div>
+                    <p class="font-bold text-slate-700 mb-4">اضغط على البالون المطابق للون أو الرقم المطلوب!</p>
+                    <div id="balloonsGrid" class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto"></div>
+                </div>
+
+                <!-- 3. تحدي الألغاز -->
+                <div id="gamePanel-riddles" class="hidden bg-amber-50/80 rounded-3xl p-6 border-2 border-amber-200 text-center">
+                    <div class="inline-block bg-amber-200 text-amber-950 font-black px-4 py-1 rounded-full text-sm mb-3">
+                        لغز <span id="riddleNumber">1</span> من 5
+                    </div>
+                    <div id="riddleIcon" class="text-6xl mb-3">🧩</div>
+                    <h3 id="riddleText" class="text-xl md:text-2xl font-black text-slate-800 mb-6"></h3>
+                    <div id="riddleChoices" class="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-2xl mx-auto"></div>
+                </div>
+
+                <!-- 4. مرسم التلوين الحر -->
+                <div id="gamePanel-canvas" class="hidden bg-purple-50/80 rounded-3xl p-5 border-2 border-purple-200">
+                    <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+                        <div class="flex flex-wrap items-center gap-2">
+                            <span class="font-black text-purple-900 text-sm">🎨 الألوان:</span>
+                            <button type="button" onclick="setCanvasColor('#EF4444')" class="w-8 h-8 rounded-full bg-red-500 border-2 border-white shadow"></button>
+                            <button type="button" onclick="setCanvasColor('#F59E0B')" class="w-8 h-8 rounded-full bg-amber-500 border-2 border-white shadow"></button>
+                            <button type="button" onclick="setCanvasColor('#10B981')" class="w-8 h-8 rounded-full bg-emerald-500 border-2 border-white shadow"></button>
+                            <button type="button" onclick="setCanvasColor('#3B82F6')" class="w-8 h-8 rounded-full bg-blue-500 border-2 border-white shadow"></button>
+                            <button type="button" onclick="setCanvasColor('#EC4899')" class="w-8 h-8 rounded-full bg-pink-500 border-2 border-white shadow"></button>
+                            <button type="button" onclick="setCanvasColor('#8B5CF6')" class="w-8 h-8 rounded-full bg-purple-500 border-2 border-white shadow"></button>
+                            <button type="button" onclick="setCanvasColor('#1E293B')" class="w-8 h-8 rounded-full bg-slate-800 border-2 border-white shadow"></button>
+                        </div>
+
+                        <div class="flex flex-wrap items-center gap-2">
+                            <button type="button" onclick="setCanvasBrush(6, false)" class="kid-btn bg-white px-3 py-1.5 rounded-xl text-xs font-black border border-purple-200">فرشاة صغيرة</button>
+                            <button type="button" onclick="setCanvasBrush(14, false)" class="kid-btn bg-white px-3 py-1.5 rounded-xl text-xs font-black border border-purple-200">فرشاة كبيرة</button>
+                            <button type="button" onclick="setCanvasBrush(22, true)" class="kid-btn bg-slate-200 px-3 py-1.5 rounded-xl text-xs font-black">🧽 ممحاة</button>
+                            <button type="button" onclick="stampCanvasEmoji('⭐')" class="kid-btn bg-amber-100 px-3 py-1 rounded-xl text-lg">⭐</button>
+                            <button type="button" onclick="stampCanvasEmoji('🎈')" class="kid-btn bg-pink-100 px-3 py-1 rounded-xl text-lg">🎈</button>
+                            <button type="button" onclick="stampCanvasEmoji('🌈')" class="kid-btn bg-sky-100 px-3 py-1 rounded-xl text-lg">🌈</button>
+                            <button type="button" onclick="clearKidsCanvas()" class="kid-btn bg-rose-500 text-white px-3.5 py-1.5 rounded-xl text-xs font-black">🗑️ مسح</button>
+                            <button type="button" onclick="finishDrawingCelebration()" class="kid-btn bg-emerald-500 text-white px-4 py-1.5 rounded-xl text-xs md:text-sm font-black">
+                                أنهيت رسمتي! 🎉
+                            </button>
+                        </div>
+                    </div>
+                    <div class="w-full h-80 md:h-96 bg-white rounded-2xl border-4 border-purple-300 overflow-hidden shadow-inner">
+                        <canvas id="kidsPaintCanvas" class="w-full h-full touch-none cursor-crosshair"></canvas>
+                    </div>
+                </div>
+
+                <!-- 5. صيد النجوم والهدايا -->
+                <div id="gamePanel-catch" class="hidden bg-emerald-50/80 rounded-3xl p-5 border-2 border-emerald-200 text-center">
+                    <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+                        <div class="flex flex-wrap items-center gap-2 font-black text-sm md:text-base">
+                            <span class="bg-white px-3.5 py-1.5 rounded-xl border border-emerald-200 text-emerald-800">
+                                النقاط: <span id="catchPointsDisplay">0</span> / 40
+                            </span>
+                            <span class="bg-white px-3.5 py-1.5 rounded-xl border border-emerald-200 text-slate-700">
+                                الجولة: <span id="catchRoundDisplay">1</span>
+                            </span>
+                        </div>
+                        <button type="button" onclick="initCatchGridGame()" class="kid-btn bg-emerald-500 text-white font-black px-4 py-2 rounded-xl">
+                            🔄 شبكة جديدة
+                        </button>
+                    </div>
+                    <p class="font-bold text-slate-700 mb-4">اصطد النجوم والهدايا (⭐🎁🎈) واحذر العقبات (🪨⚡)!</p>
+                    <div id="catchGridBoard" class="grid grid-cols-3 sm:grid-cols-4 gap-3 max-w-2xl mx-auto"></div>
+                </div>
+
+                <!-- 6. ترتيب الألوان والأنماط -->
+                <div id="gamePanel-pattern" class="hidden bg-pink-50/80 rounded-3xl p-6 border-2 border-pink-200 text-center">
+                    <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+                        <span class="bg-white px-4 py-1.5 rounded-xl border border-pink-200 font-black text-pink-800">
+                            نمط رقم <span id="patternLevelDisplay">1</span> من 4
+                        </span>
+                        <button type="button" onclick="initPatternSequenceGame()" class="kid-btn bg-pink-500 text-white font-black px-4 py-2 rounded-xl">
+                            🔄 إعادة النمط
+                        </button>
+                    </div>
+                    <p class="font-bold text-slate-700 mb-3">رتّب الرموز التالية بنفس التسلسل المعروض:</p>
+                    <div id="patternTargetRow" class="flex flex-wrap items-center justify-center gap-3 mb-4 bg-white p-3 rounded-2xl border-2 border-pink-200 max-w-xl mx-auto"></div>
+                    <div id="patternAnswerRow" class="flex flex-wrap items-center justify-center gap-3 mb-5 min-h-[64px] bg-pink-100/70 p-3 rounded-2xl border-2 border-dashed border-pink-300 max-w-xl mx-auto"></div>
+                    <div id="patternOptionsRow" class="flex flex-wrap items-center justify-center gap-3 max-w-xl mx-auto"></div>
+                </div>
+
+                <!-- 7. اختبار المعلومات السريع -->
+                <div id="gamePanel-quiz" class="hidden bg-indigo-50/80 rounded-3xl p-6 border-2 border-indigo-200 text-center">
+                    <div class="inline-block bg-indigo-200 text-indigo-950 font-black px-4 py-1 rounded-full text-sm mb-3">
+                        سؤال سريع <span id="quickQuizNumber">1</span> من 5
+                    </div>
+                    <div id="quickQuizIcon" class="text-6xl mb-3">🌍</div>
+                    <h3 id="quickQuizQuestion" class="text-xl md:text-2xl font-black text-slate-800 mb-6"></h3>
+                    <div id="quickQuizChoices" class="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-2xl mx-auto"></div>
+                </div>
+            </div>
+
+            <!-- لوحة المتسابقين والدرجات التفاعلية -->
+            <div class="bg-white/95 rounded-3xl p-6 md:p-8 shadow-xl border-4 border-amber-300">
+                <div class="flex flex-col lg:flex-row items-center justify-between gap-4 border-b-2 border-dashed border-amber-200 pb-5 mb-5">
+                    <div class="flex items-center gap-3 text-center lg:text-right">
+                        <div class="w-14 h-14 shrink-0 rounded-2xl bg-amber-100 border-2 border-amber-300 flex items-center justify-center text-3xl">
+                            🏆
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-black text-amber-900">لوحة المتسابقين والدرجات</h3>
+                            <p class="text-slate-600 font-bold text-sm">
+                                أضف المتسابقين، اختر المتسابق النشط، وتحكّم بدرجاتهم بسهولة!
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap items-center justify-center gap-2">
+                        <span class="bg-amber-50 border-2 border-amber-200 text-amber-950 font-black text-sm px-3.5 py-2 rounded-xl">
+                            👥 العدد: <span id="contestantsTotalCount">0</span>
+                        </span>
+                        <label class="flex items-center gap-1.5 bg-sky-50 border-2 border-sky-200 text-sky-950 font-black text-sm px-3 py-1.5 rounded-xl">
+                            <span>مقدار مخصص:</span>
+                            <input id="customDeltaInput" type="number" min="1" max="100" value="2" class="w-16 text-center bg-white rounded-lg border border-sky-300 font-black py-0.5">
+                        </label>
+                        <button type="button" onclick="resetAllScores()" class="kid-btn bg-amber-100 hover:bg-amber-200 text-amber-950 font-black text-sm px-3.5 py-2 rounded-xl border border-amber-300">
+                            🔄 تصفير الدرجات
+                        </button>
+                        <button type="button" onclick="clearAllContestants()" class="kid-btn bg-rose-100 hover:bg-rose-200 text-rose-800 font-black text-sm px-3.5 py-2 rounded-xl border border-rose-300">
+                            🗑️ مسح الكل
+                        </button>
+                    </div>
+                </div>
+
+                <!-- شريط اختيار المتسابق النشط وربط نتائج الألعاب -->
+                <div class="bg-gradient-to-l from-purple-50 via-pink-50 to-amber-50 rounded-2xl p-4 border-2 border-purple-200 mb-5 flex flex-col md:flex-row items-center justify-between gap-3">
+                    <div class="flex flex-wrap items-center justify-center md:justify-start gap-2">
+                        <label for="activeContestantSelect" class="font-black text-purple-900 text-sm md:text-base">
+                            🎯 المتسابق النشط للألعاب:
+                        </label>
+                        <select id="activeContestantSelect" onchange="setActiveContestant(this.value)" class="px-3.5 py-2 rounded-xl border-2 border-purple-300 bg-white font-black text-sm text-slate-800">
+                            <option value="">بدون ربط تلقائي</option>
+                        </select>
+                    </div>
+
+                    <div class="flex flex-wrap items-center justify-center gap-3 text-xs md:text-sm font-extrabold text-slate-700">
+                        <label class="inline-flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-xl border border-purple-200 cursor-pointer">
+                            <input id="autoUpdateScoreCheck" type="checkbox" checked class="accent-pink-500 w-4 h-4">
+                            <span>تحديث نقاط النشط تلقائياً عند الفوز</span>
+                        </label>
+                        <label class="inline-flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-xl border border-purple-200 cursor-pointer">
+                            <input id="deductOnLoseCheck" type="checkbox" class="accent-rose-500 w-4 h-4">
+                            <span>خصم نقطة عند الخسارة</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- إضافة متسابق جديد -->
+                <div class="grid grid-cols-1 sm:grid-cols-12 gap-3 mb-5 bg-amber-50/70 p-4 rounded-2xl border-2 border-amber-200">
+                    <div class="sm:col-span-6">
+                        <label for="newContestantNameInput" class="block text-xs font-black text-slate-700 mb-1">اسم المتسابق / المتسابقة</label>
+                        <input id="newContestantNameInput" type="text" placeholder="اكتب اسم المتسابق هنا..." onkeydown="if(event.key==='Enter'){addNewContestant();}" class="w-full px-4 py-2.5 rounded-xl border-2 border-amber-200 bg-white font-extrabold text-slate-800 focus:outline-none focus:border-pink-400">
+                    </div>
+                    <div class="sm:col-span-3">
+                        <label for="newContestantInitialScore" class="block text-xs font-black text-slate-700 mb-1">درجة البداية</label>
+                        <input id="newContestantInitialScore" type="number" value="0" onkeydown="if(event.key==='Enter'){addNewContestant();}" class="w-full px-4 py-2.5 rounded-xl border-2 border-amber-200 bg-white font-extrabold text-center text-amber-900 focus:outline-none focus:border-pink-400">
+                    </div>
+                    <div class="sm:col-span-3 flex items-end">
+                        <button type="button" onclick="addNewContestant()" class="kid-btn w-full bg-gradient-to-l from-pink-500 to-purple-500 text-white font-black py-2.5 px-4 rounded-xl border-2 border-white">
+                            ➕ إضافة متسابق
+                        </button>
+                    </div>
+                </div>
+
+                <div id="contestantsNotice" class="hidden mb-4 px-4 py-2.5 rounded-xl font-black text-sm text-center"></div>
+                <div id="contestantsCardsList" class="space-y-3"></div>
+            </div>
+        </section>
+
+        <!-- ======================================================= -->
+        <!-- القسم الثالث: بطاقات حقوق الطفل                          -->
+        <!-- ======================================================= -->
+        <section id="section-rights" class="hidden bg-white/95 rounded-3xl p-6 md:p-8 shadow-xl border-4 border-emerald-300">
+            <div class="text-center mb-6">
+                <h2 class="text-2xl md:text-3xl font-black text-emerald-700 mb-2">🌈 بطاقات حقوق الطفل الجميلة</h2>
+                <p class="text-slate-600 font-bold">اضغط على أي بطاقة للاحتفال بحقك وكسب نجمة! ⭐</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                <article onclick="tapRightCard(this)" class="cursor-pointer transition-transform bg-pink-50 hover:bg-pink-100 rounded-3xl p-5 border-4 border-pink-200 text-center">
+                    <div class="text-5xl mb-3">🎈</div>
+                    <h3 class="text-xl font-black text-pink-800 mb-2">حق اللعب</h3>
+                    <p class="text-slate-700 font-bold text-sm leading-relaxed">
+                        لكل طفل الحق في اللعب والمرح والراحة وقضاء وقت سعيد يطوّر خياله وصداقاته.
+                    </p>
+                </article>
+
+                <article onclick="tapRightCard(this)" class="cursor-pointer transition-transform bg-sky-50 hover:bg-sky-100 rounded-3xl p-5 border-4 border-sky-200 text-center">
+                    <div class="text-5xl mb-3">📚</div>
+                    <h3 class="text-xl font-black text-sky-800 mb-2">حق التعليم</h3>
+                    <p class="text-slate-700 font-bold text-sm leading-relaxed">
+                        لكل طفل الحق في التعلّم والقراءة واكتساب المعرفة في بيئة مشجعة وآمنة.
+                    </p>
+                </article>
+
+                <article onclick="tapRightCard(this)" class="cursor-pointer transition-transform bg-emerald-50 hover:bg-emerald-100 rounded-3xl p-5 border-4 border-emerald-200 text-center">
+                    <div class="text-5xl mb-3">🏥</div>
+                    <h3 class="text-xl font-black text-emerald-800 mb-2">حق الصحة والرعاية</h3>
+                    <p class="text-slate-700 font-bold text-sm leading-relaxed">
+                        لكل طفل الحق في الغذاء الصحي والماء النظيف والرعاية الطبية والاهتمام بصحته.
+                    </p>
+                </article>
+
+                <article onclick="tapRightCard(this)" class="cursor-pointer transition-transform bg-amber-50 hover:bg-amber-100 rounded-3xl p-5 border-4 border-amber-200 text-center">
+                    <div class="text-5xl mb-3">💬</div>
+                    <h3 class="text-xl font-black text-amber-800 mb-2">حق التعبير والاستماع</h3>
+                    <p class="text-slate-700 font-bold text-sm leading-relaxed">
+                        لكل طفل الحق في التعبير عن رأيه ومشاعره باحترام وأن يُستمع إليه باهتمام.
+                    </p>
+                </article>
+
+                <article onclick="tapRightCard(this)" class="cursor-pointer transition-transform bg-purple-50 hover:bg-purple-100 rounded-3xl p-5 border-4 border-purple-200 text-center">
+                    <div class="text-5xl mb-3">🏡</div>
+                    <h3 class="text-xl font-black text-purple-800 mb-2">حق الأسرة والحماية</h3>
+                    <p class="text-slate-700 font-bold text-sm leading-relaxed">
+                        لكل طفل الحق في العيش وسط أسرة ترعاه وتحميه من كل أذى أو إهمال.
+                    </p>
+                </article>
+
+                <article onclick="tapRightCard(this)" class="cursor-pointer transition-transform bg-orange-50 hover:bg-orange-100 rounded-3xl p-5 border-4 border-orange-200 text-center">
+                    <div class="text-5xl mb-3">🪪</div>
+                    <h3 class="text-xl font-black text-orange-800 mb-2">حق الهوية والانتماء</h3>
+                    <p class="text-slate-700 font-bold text-sm leading-relaxed">
+                        لكل طفل الحق في اسم جميل وهوية وانتماء يُحترم بهما بين أقرانه والمجتمع.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <!-- التذييل الختامي -->
+        <footer class="mt-8 bg-white/95 rounded-3xl p-5 shadow-lg border-4 border-pink-200 text-center">
+            <p class="text-lg md:text-xl font-black text-purple-900">
+                👩‍🏫 تنفيذ المعلمة: سهام الزهراني — احتفالاً باليوم العالمي للطفل 🎈🌟
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // =======================================================
+        // الحالة العامة والنجوم والقصاصات الاحتفالية
+        // =======================================================
+        let globalStars = 0;
+        let sfxEnabled = true;
+        let sharedAudioCtx = null;
+
+        function addGlobalStars(count) {
+            globalStars += Number(count) || 0;
+            const el = document.getElementById('globalStarsDisplay');
+            if (el) el.textContent = String(globalStars);
+        }
+
+        function celebrateWithConfetti() {
+            addGlobalStars(1);
+            const colors = ['#F472B6', '#38BDF8', '#FACC15', '#4ADE80', '#A78BFA', '#FB923C'];
+            for (let i = 0; i < 32; i++) {
+                const piece = document.createElement('div');
+                piece.className = 'confetti-piece';
+                piece.style.left = (Math.random() * 100) + 'vw';
+                piece.style.backgroundColor = colors[i % colors.length];
+                piece.style.borderRadius = i % 2 === 0 ? '50%' : '3px';
+                const dur = (Math.random() * 1.4 + 1.6).toFixed(2);
+                piece.style.animationDuration = dur + 's';
+                document.body.appendChild(piece);
+                setTimeout(() => piece.remove(), parseFloat(dur) * 1000 + 100);
+            }
+        }
+
+        function switchMainSection(sectionKey) {
+            const keys = ['song', 'games', 'rights'];
+            keys.forEach(k => {
+                const sec = document.getElementById('section-' + k);
+                const btn = document.getElementById('mainTab-' + k);
+                if (sec) sec.classList.toggle('hidden', k !== sectionKey);
+                if (btn) {
+                    btn.classList.remove('bg-pink-500', 'bg-sky-500', 'bg-emerald-500', 'text-white', 'border-white');
+                    btn.classList.add('bg-white');
+                    if (k === 'song') btn.classList.add('text-pink-700', 'border-pink-300');
+                    if (k === 'games') btn.classList.add('text-sky-700', 'border-sky-300');
+                    if (k === 'rights') btn.classList.add('text-emerald-700', 'border-emerald-300');
+                }
+            });
+
+            const activeBtn = document.getElementById('mainTab-' + sectionKey);
+            if (activeBtn) {
+                activeBtn.classList.remove('bg-white', 'text-pink-700', 'text-sky-700', 'text-emerald-700', 'border-pink-300', 'border-sky-300', 'border-emerald-300');
+                activeBtn.classList.add('text-white', 'border-white');
+                if (sectionKey === 'song') activeBtn.classList.add('bg-pink-500');
+                if (sectionKey === 'games') {
+                    activeBtn.classList.add('bg-sky-500');
+                    setTimeout(resizeKidsCanvas, 60);
+                }
+                if (sectionKey === 'rights') activeBtn.classList.add('bg-emerald-500');
+            }
+        }
+
+        // =======================================================
+        // Web Audio API: موسيقى الأنشودة فقط + مؤثرات الفوز والخسارة
+        // =======================================================
+        function getAudioContext() {
+            const Ctx = window.AudioContext || window.webkitAudioContext;
+            if (!Ctx) return null;
+            if (!sharedAudioCtx) {
+                sharedAudioCtx = new Ctx();
+            }
+            if (sharedAudioCtx.state === 'suspended') {
+                sharedAudioCtx.resume().catch(() => {});
+            }
+            return sharedAudioCtx;
+        }
+
+        function triggerTone(freq, startTime, duration, type = 'triangle', gainPeak = 0.13) {
+            const ctx = getAudioContext();
+            if (!ctx) return;
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+            osc.type = type;
+            osc.frequency.setValueAtTime(freq, startTime);
+            gain.gain.setValueAtTime(0.0001, startTime);
+            gain.gain.exponentialRampToValueAtTime(gainPeak, startTime + 0.025);
+            gain.gain.exponentialRampToValueAtTime(0.0001, startTime + duration);
+            osc.connect(gain);
+            gain.connect(ctx.destination);
+            osc.start(startTime);
+            osc.stop(startTime + duration + 0.02);
+        }
+
+        // مؤثر الفوز المستقل (نغمة صاعدة مبهجة)
+        function playWinSfx() {
+            if (!sfxEnabled) return;
+            const ctx = getAudioContext();
+            if (!ctx) return;
+            const now = ctx.currentTime + 0.01;
+            const notes = [523.25, 659.25, 783.99, 1046.50];
+            notes.forEach((f, idx) => {
+                triggerTone(f, now + idx * 0.11, idx === notes.length - 1 ? 0.38 : 0.15, 'triangle', 0.16);
+            });
+        }
+
+        // مؤثر الخسارة المستقل (نغمة هابطة لطيفة)
+        function playLoseSfx() {
+            if (!sfxEnabled) return;
+            const ctx = getAudioContext();
+            if (!ctx) return;
+            const now = ctx.currentTime + 0.01;
+            const notes = [392.00, 329.63, 261.63];
+            notes.forEach((f, idx) => {
+                triggerTone(f, now + idx * 0.16, 0.22, 'sine', 0.12);
+            });
+        }
+
+        function toggleSfx() {
+            sfxEnabled = !sfxEnabled;
+            const btn = document.getElementById('sfxToggleBtn');
+            if (btn) {
+                btn.textContent = sfxEnabled ? '🔔 المؤثرات: مفعّلة' : '🔕 المؤثرات: مكتومة';
+                btn.classList.toggle('bg-emerald-500', sfxEnabled);
+                btn.classList.toggle('bg-slate-400', !sfxEnabled);
+            }
+        }
+
+        let bannerTimer = null;
+        function showOutcomeBanner(isWin, text) {
+            const banner = document.getElementById('outcomeBanner');
+            if (!banner) return;
+            clearTimeout(bannerTimer);
+            banner.className = isWin
+                ? 'mb-5 p-4 rounded-2xl border-4 font-black text-base md:text-lg text-center animate-pop bg-emerald-100 text-emerald-950 border-emerald-400'
+                : 'mb-5 p-4 rounded-2xl border-4 font-black text-base md:text-lg text-center animate-pop bg-rose-100 text-rose-950 border-rose-300';
+            banner.textContent = text;
+            banner.classList.remove('hidden');
+            bannerTimer = setTimeout(() => banner.classList.add('hidden'), 3200);
+        }
+
+        function recordGameOutcome(isWin, baseMessage, starsReward = 2) {
+            let extra = '';
+            if (isWin) {
+                playWinSfx();
+                addGlobalStars(starsReward);
+                celebrateWithConfetti();
+                const res = applyScoreToActiveContestant(true, null);
+                if (res) {
+                    extra = ` — ${res.name}: +${res.delta} نقطة (المجموع: ${res.score})`;
+                }
+                showOutcomeBanner(true, baseMessage + extra);
+            } else {
+                playLoseSfx();
+                const res = applyScoreToActiveContestant(false, null);
+                if (res && res.delta !== 0) {
+                    extra = ` — ${res.name}: ${res.delta} نقطة (المجموع: ${res.score})`;
+                }
+                showOutcomeBanner(false, baseMessage + extra);
+            }
+        }
+
+        function testWinOutcome() {
+            recordGameOutcome(true, '🏆 أحسنت يا بطل! هذا صوت ومؤثر الفوز المبهج!', 1);
+        }
+
+        function testLoseOutcome() {
+            recordGameOutcome(false, '💫 لا بأس! هذا صوت الخسارة اللطيف، حاول مرة أخرى!', 0);
+        }
+
+        // =======================================================
+        // مشغل الأنشودة الموسيقية فقط (بدون speechSynthesis)
+        // =======================================================
+        const songVersesData = [
+            {
+                text: 'أَنَا طِفْلٌ أُحِبُّ الحَيَاةْ، أَرْسُمُ البَسْمَةَ فِي كُلِّ اتِّجَاهْ 🌸',
+                melody: [261.63, 293.66, 329.63, 392.00, 329.63, 293.66, 261.63, 392.00],
+                rhythm: [130.81, 196.00, 130.81, 196.00]
+            },
+            {
+                text: 'حَقِّي أَنْ أَتَعَلَّمَ وَأَقْرَأْ، وَبِالعِلْمِ وَالنُّورِ أَبْدَأْ 📚✨',
+                melody: [293.66, 329.63, 392.00, 440.00, 392.00, 329.63, 293.66, 440.00],
+                rhythm: [146.83, 220.00, 146.83, 220.00]
+            },
+            {
+                text: 'حَقِّي أَنْ أَلْعَبَ وَأَمْرَحْ، وَبِقَوْسِ قُزَحَ أَفْرَحْ 🌈🎈',
+                melody: [329.63, 392.00, 440.00, 523.25, 440.00, 392.00, 329.63, 523.25],
+                rhythm: [164.81, 246.94, 164.81, 246.94]
+            },
+            {
+                text: 'فِي أَمَانٍ وَحُبٍّ وَسَلَامْ، نَبْنِي غَدَنَا بِأَحْلَى الأَحْلَامْ 🕊️💖',
+                melody: [392.00, 440.00, 523.25, 587.33, 523.25, 440.00, 392.00, 523.25],
+                rhythm: [196.00, 293.66, 196.00, 293.66]
+            },
+            {
+                text: 'نَحْنُ أَطْفَالُ العَالَمِ نُنْشِدُ، لِلْمُسْتَقْبَلِ المُشْرِقِ نَصْعَدُ 🌟👧',
+                melody: [440.00, 523.25, 587.33, 659.25, 587.33, 523.25, 440.00, 523.25],
+                rhythm: [220.00, 329.63, 220.00, 329.63]
+            },
+            {
+                text: 'كُلُّ عَامٍ وَنَحْنُ بِخَيْرٍ، نَمْلَأُ الدُّنْيَا حُبّاً وَنُورْ 🎊💐',
+                melody: [523.25, 493.88, 440.00, 392.00, 440.00, 523.25, 587.33, 523.25],
+                rhythm: [130.81, 196.00, 261.63, 196.00]
+            }
+        ];
+
+        let currentVerseIndex = 0;
+        let isSongPlaying = false;
+        let songStepTimeout = null;
+        let songRunToken = 0;
+
+        function highlightSongVerse(idx) {
+            currentVerseIndex = idx;
+            const cards = document.querySelectorAll('#songVersesGrid .lyric-card');
+            cards.forEach((card, i) => {
+                card.classList.toggle('active-lyric', i === idx);
+                card.classList.toggle('text-slate-700', i !== idx);
+            });
+            const numEl = document.getElementById('currentVerseNumber');
+            const bannerEl = document.getElementById('currentVerseBanner');
+            if (numEl) numEl.textContent = String(idx + 1);
+            if (bannerEl && songVersesData[idx]) {
+                bannerEl.textContent = songVersesData[idx].text;
+            }
+        }
+
+        function setSongUiState(playing, badgeText) {
+            const badge = document.getElementById('songStatusBadge');
+            const wave = document.getElementById('songWaveIndicator');
+            if (badge) badge.textContent = badgeText;
+            if (wave) {
+                wave.classList.toggle('hidden', !playing);
+                wave.classList.toggle('flex', playing);
+            }
+        }
+
+        function scheduleVersePlayback(idx, token) {
+            if (!isSongPlaying || token !== songRunToken) return;
+            highlightSongVerse(idx);
+            setSongUiState(true, '🎶 جاري العزف الموسيقي...');
+
+            const ctx = getAudioContext();
+            const verse = songVersesData[idx];
+            const stepSec = 0.34;
+            const durationSec = 0.29;
+
+            if (ctx && verse) {
+                const start = ctx.currentTime + 0.02;
+                verse.melody.forEach((freq, i) => {
+                    triggerTone(freq, start + i * stepSec, durationSec, 'triangle', 0.13);
+                });
+                verse.rhythm.forEach((bassFreq, i) => {
+                    triggerTone(bassFreq, start + i * (stepSec * 2), stepSec * 1.6, 'sine', 0.06);
+                });
+            }
+
+            const verseMs = verse.melody.length * stepSec * 1000 + 220;
+            songStepTimeout = setTimeout(() => {
+                if (!isSongPlaying || token !== songRunToken) return;
+                if (idx + 1 < songVersesData.length) {
+                    scheduleVersePlayback(idx + 1, token);
+                } else {
+                    isSongPlaying = false;
+                    setSongUiState(false, '✨ اكتمل العزف الموسيقي');
+                    addGlobalStars(2);
+                    celebrateWithConfetti();
+                }
+            }, verseMs);
+        }
+
+        function playSongMusic() {
+            if (isSongPlaying) return;
+            getAudioContext();
+            songRunToken++;
+            isSongPlaying = true;
+            scheduleVersePlayback(currentVerseIndex, songRunToken);
+        }
+
+        function pauseSongMusic() {
+            songRunToken++;
+            isSongPlaying = false;
+            clearTimeout(songStepTimeout);
+            setSongUiState(false, '⏸️ متوقف مؤقتاً');
+        }
+
+        function restartSongMusic() {
+            songRunToken++;
+            isSongPlaying = false;
+            clearTimeout(songStepTimeout);
+            highlightSongVerse(0);
+            setSongUiState(false, '🔁 أعيد من البداية');
+            playSongMusic();
+        }
+
+        function selectAndPlayVerse(idx) {
+            songRunToken++;
+            isSongPlaying = false;
+            clearTimeout(songStepTimeout);
+            highlightSongVerse(idx);
+            playSongMusic();
+        }
+
+        // =======================================================
+        // لوحة المتسابقين والدرجات التفاعلية
+        // =======================================================
+        const CONTESTANTS_KEY = 'childrens_day_saham_contestants_v2';
+        let contestantsList = [];
+        let activeContestantId = '';
+
+        function escapeText(value) {
+            return String(value)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+        }
+
+        function showContestantNotice(msg, isError = false) {
+            const box = document.getElementById('contestantsNotice');
+            if (!box) return;
+            box.textContent = msg;
+            box.className = isError
+                ? 'mb-4 px-4 py-2.5 rounded-xl font-black text-sm text-center bg-rose-100 text-rose-900 border-2 border-rose-300'
+                : 'mb-4 px-4 py-2.5 rounded-xl font-black text-sm text-center bg-emerald-100 text-emerald-900 border-2 border-emerald-300';
+            box.classList.remove('hidden');
+            clearTimeout(box._timer);
+            box._timer = setTimeout(() => box.classList.add('hidden'), 2400);
+        }
+
+        function getCustomDelta() {
+            const input = document.getElementById('customDeltaInput');
+            const n = parseInt(input ? input.value : '2', 10);
+            if (Number.isNaN(n) || n < 1) return 1;
+            return Math.min(n, 100);
+        }
+
+        function saveContestantsData() {
+            try {
+                localStorage.setItem(CONTESTANTS_KEY, JSON.stringify(contestantsList));
+            } catch (e) {}
+            renderActiveContestantOptions();
+        }
+
+        function loadContestantsData() {
+            try {
+                const raw = localStorage.getItem(CONTESTANTS_KEY);
+                if (raw) {
+                    const parsed = JSON.parse(raw);
+                    if (Array.isArray(parsed)) {
+                        contestantsList = parsed
+                            .map((c, idx) => ({
+                                id: c.id || ('kid_' + idx + '_' + Date.now()),
+                                name: String(c.name || '').trim(),
+                                score: Number(c.score) || 0
+                            }))
+                            .filter(c => c.name.length > 0);
+                        return;
+                    }
+                }
+            } catch (e) {}
+
+            contestantsList = [
+                { id: 'kid_1', name: 'سارة', score: 10 },
+                { id: 'kid_2', name: 'أحمد', score: 8 },
+                { id: 'kid_3', name: 'ليان', score: 6 }
+            ];
+        }
+
+        function renderActiveContestantOptions() {
+            const select = document.getElementById('activeContestantSelect');
+            if (!select) return;
+            const currentVal = activeContestantId || select.value;
+            select.innerHTML = `<option value="">بدون ربط تلقائي</option>` + contestantsList.map(c => `
+                <option value="${escapeText(c.id)}" ${c.id === currentVal ? 'selected' : ''}>
+                    ${escapeText(c.name)} (${Number(c.score) || 0})
+                </option>
+            `).join('');
+            activeContestantId = select.value;
+        }
+
+        function setActiveContestant(id) {
+            activeContestantId = id || '';
+        }
+
+        function applyScoreToActiveContestant(isWin, explicitDelta = null) {
+            if (!activeContestantId) return null;
+            const target = contestantsList.find(c => c.id === activeContestantId);
+            if (!target) return null;
+
+            const autoWinCheck = document.getElementById('autoUpdateScoreCheck');
+            const deductLoseCheck = document.getElementById('deductOnLoseCheck');
+
+            if (isWin) {
+                if (autoWinCheck && !autoWinCheck.checked) return null;
+                const delta = explicitDelta !== null ? Number(explicitDelta) : getCustomDelta();
+                target.score = (Number(target.score) || 0) + delta;
+                saveContestantsData();
+                renderContestantsCards();
+                return { name: target.name, delta, score: target.score };
+            } else {
+                if (!deductLoseCheck || !deductLoseCheck.checked) return null;
+                const delta = explicitDelta !== null ? -Math.abs(Number(explicitDelta)) : -1;
+                target.score = (Number(target.score) || 0) + delta;
+                saveContestantsData();
+                renderContestantsCards();
+                return { name: target.name, delta, score: target.score };
+            }
+        }
+
+        function addNewContestant() {
+            const nameInput = document.getElementById('newContestantNameInput');
+            const scoreInput = document.getElementById('newContestantInitialScore');
+            if (!nameInput) return;
+
+            const name = nameInput.value.trim();
+            if (!name) {
+                showContestantNotice('يرجى كتابة اسم المتسابق أولاً 🌸', true);
+                nameInput.focus();
+                return;
+            }
+
+            const rawScore = scoreInput ? Number(scoreInput.value) : 0;
+            const score = Number.isFinite(rawScore) ? rawScore : 0;
+
+            contestantsList.push({
+                id: 'kid_' + Date.now() + '_' + Math.random().toString(36).slice(2, 6),
+                name,
+                score
+            });
+
+            nameInput.value = '';
+            if (scoreInput) scoreInput.value = '0';
+            saveContestantsData();
+            renderContestantsCards();
+            showContestantNotice(`تمت إضافة «${name}» إلى لوحة المتسابقين 🎉`);
+        }
+
+        function adjustContestantScore(id, delta) {
+            const target = contestantsList.find(c => c.id === id);
+            if (!target) return;
+            target.score = (Number(target.score) || 0) + Number(delta);
+            saveContestantsData();
+            renderContestantsCards();
+        }
+
+        function deleteContestant(id) {
+            const target = contestantsList.find(c => c.id === id);
+            if (!target) return;
+            const removedName = target.name;
+            contestantsList = contestantsList.filter(c => c.id !== id);
+            if (activeContestantId === id) activeContestantId = '';
+            saveContestantsData();
+            renderContestantsCards();
+            showContestantNotice(`تم حذف «${removedName}» من القائمة.`);
+        }
+
+        function resetAllScores() {
+            if (!contestantsList.length) return;
+            contestantsList = contestantsList.map(c => ({ ...c, score: 0 }));
+            saveContestantsData();
+            renderContestantsCards();
+            showContestantNotice('تم تصفير درجات جميع المتسابقين 🔄');
+        }
+
+        function clearAllContestants() {
+            if (!contestantsList.length) return;
+            contestantsList = [];
+            activeContestantId = '';
+            saveContestantsData();
+            renderContestantsCards();
+            showContestantNotice('تم مسح جميع المتسابقين 🗑️');
+        }
+
+        function renderContestantsCards() {
+            const container = document.getElementById('contestantsCardsList');
+            const totalEl = document.getElementById('contestantsTotalCount');
+            if (!container) return;
+
+            if (totalEl) totalEl.textContent = String(contestantsList.length);
+
+            if (!contestantsList.length) {
+                container.innerHTML = `
+                    <div class="bg-amber-50/60 border-2 border-dashed border-amber-300 rounded-2xl p-6 text-center">
+                        <div class="text-4xl mb-2">🌟🎈</div>
+                        <p class="font-black text-slate-700">لا يوجد متسابقون حالياً</p>
+                        <p class="font-bold text-slate-500 text-sm mt-1">أدخل اسم المتسابق بالأعلى لبدء تسجيل الدرجات.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            const maxScore = Math.max(...contestantsList.map(c => Number(c.score) || 0));
+            const customStep = getCustomDelta();
+
+            container.innerHTML = contestantsList.map((c, idx) => {
+                const score = Number(c.score) || 0;
+                const isLeader = score === maxScore && maxScore > 0;
+                const cardClass = isLeader
+                    ? 'bg-gradient-to-l from-amber-100 via-yellow-50 to-pink-50 border-amber-400'
+                    : 'bg-white border-slate-200';
+
+                return `
+                    <div class="flex flex-col lg:flex-row items-center justify-between gap-3 p-4 rounded-2xl border-2 ${cardClass} shadow-sm">
+                        <div class="flex items-center justify-between lg:justify-start gap-3 w-full lg:w-auto">
+                            <div class="flex items-center gap-3">
+                                <span class="w-10 h-10 rounded-xl ${isLeader ? 'bg-amber-400 text-white' : 'bg-sky-100 text-sky-800'} font-black flex items-center justify-center">
+                                    ${isLeader ? '👑' : (idx + 1)}
+                                </span>
+                                <div>
+                                    <div class="font-black text-lg text-slate-800 flex items-center gap-2">
+                                        <span>${escapeText(c.name)}</span>
+                                        ${isLeader ? '<span class="text-xs bg-amber-300 text-amber-950 px-2 py-0.5 rounded-full font-black">المتصدر</span>' : ''}
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="bg-amber-100 text-amber-950 font-black px-3.5 py-1.5 rounded-xl border border-amber-300 text-base">
+                                الدرجة: ${score}
+                            </span>
+                        </div>
+
+                        <div class="flex flex-wrap items-center justify-center gap-2 w-full lg:w-auto">
+                            <button type="button" onclick="adjustContestantScore('${escapeText(c.id)}', 1)" class="kid-btn bg-emerald-500 text-white font-black text-xs px-3 py-1.5 rounded-xl">+1</button>
+                            <button type="button" onclick="adjustContestantScore('${escapeText(c.id)}', 5)" class="kid-btn bg-sky-500 text-white font-black text-xs px-3 py-1.5 rounded-xl">+5</button>
+                            <button type="button" onclick="adjustContestantScore('${escapeText(c.id)}', -1)" class="kid-btn bg-amber-400 text-slate-900 font-black text-xs px-3 py-1.5 rounded-xl">-1</button>
+                            <button type="button" onclick="adjustContestantScore('${escapeText(c.id)}', ${customStep})" class="kid-btn bg-emerald-100 text-emerald-900 border border-emerald-300 font-black text-xs px-3 py-1.5 rounded-xl">+${customStep} إضافة</button>
+                            <button type="button" onclick="adjustContestantScore('${escapeText(c.id)}', -${customStep})" class="kid-btn bg-rose-100 text-rose-900 border border-rose-300 font-black text-xs px-3 py-1.5 rounded-xl">-${customStep} خصم</button>
+                            <button type="button" onclick="deleteContestant('${escapeText(c.id)}')" class="kid-btn bg-slate-200 hover:bg-rose-200 text-slate-800 font-black text-xs px-3 py-1.5 rounded-xl">🗑️ حذف</button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // =======================================================
+        // التبديل بين الألعاب السبعة التفاعلية
+        // =======================================================
+        const gameTitlesMap = {
+            memory: 'لعبة تطابق البطاقات',
+            balloons: 'لعبة فرقعة البالونات',
+            riddles: 'تحدي الألغاز',
+            canvas: 'مرسم التلوين الحر',
+            catch: 'صيد النجوم والهدايا',
+            pattern: 'ترتيب الألوان والأنماط',
+            quiz: 'اختبار المعلومات السريع'
+        };
+
+        function selectGame(gameKey) {
+            const allKeys = Object.keys(gameTitlesMap);
+            allKeys.forEach(k => {
+                const panel = document.getElementById('gamePanel-' + k);
+                const tab = document.getElementById('gameTab-' + k);
+                if (panel) panel.classList.toggle('hidden', k !== gameKey);
+                if (tab) {
+                    tab.classList.remove('bg-sky-500', 'bg-rose-500', 'bg-amber-500', 'bg-purple-500', 'bg-emerald-500', 'bg-pink-500', 'bg-indigo-500', 'text-white', 'border-white');
+                    tab.classList.add('bg-white');
+                }
+            });
+
+            const activeTab = document.getElementById('gameTab-' + gameKey);
+            if (activeTab) {
+                activeTab.classList.remove('bg-white');
+                activeTab.classList.add('text-white', 'border-white');
+                const colorMap = {
+                    memory: 'bg-sky-500',
+                    balloons: 'bg-rose-500',
+                    riddles: 'bg-amber-500',
+                    canvas: 'bg-purple-500',
+                    catch: 'bg-emerald-500',
+                    pattern: 'bg-pink-500',
+                    quiz: 'bg-indigo-500'
+                };
+                activeTab.classList.add(colorMap[gameKey] || 'bg-sky-500');
+            }
+
+            const titleLabel = document.getElementById('currentGameTitleLabel');
+            if (titleLabel) titleLabel.textContent = gameTitlesMap[gameKey] || '';
+
+            if (gameKey === 'canvas') {
+                setTimeout(resizeKidsCanvas, 60);
+            }
+        }
+
+        // =======================================================
+        // اللعبة 1: تطابق البطاقات (Memory Match)
+        // =======================================================
+        const memoryIcons = ['🎈', '🌈', '📚', '🎨', '🧸', '🌟'];
+        let memFlipped = [];
+        let memMatched = 0;
+        let memAttempts = 0;
+        let memLocked = false;
+
+        function initMemoryGame() {
+            const board = document.getElementById('memoryBoard');
+            if (!board) return;
+            memFlipped = [];
+            memMatched = 0;
+            memAttempts = 0;
+            memLocked = false;
+
+            const matchedEl = document.getElementById('memoryMatchedCount');
+            const attemptsEl = document.getElementById('memoryAttemptsCount');
+            if (matchedEl) matchedEl.textContent = '0';
+            if (attemptsEl) attemptsEl.textContent = '0';
+
+            const deck = [...memoryIcons, ...memoryIcons].sort(() => Math.random() - 0.5);
+            board.innerHTML = deck.map((icon, idx) => `
+                <div class="memory-tile" data-icon="${icon}" data-idx="${idx}" onclick="flipMemoryTile(this)">
+                    <div class="memory-tile-inner">
+                        <div class="memory-face bg-gradient-to-br from-sky-400 to-blue-500 text-white text-3xl font-black border-4 border-white shadow">
+                            ❓
+                        </div>
+                        <div class="memory-face memory-face-back bg-amber-100 text-4xl border-4 border-amber-300 shadow">
+                            ${icon}
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function flipMemoryTile(tile) {
+            if (memLocked || tile.classList.contains('flipped') || tile.classList.contains('matched')) return;
+            tile.classList.add('flipped');
+            memFlipped.push(tile);
+
+            if (memFlipped.length === 2) {
+                memAttempts++;
+                const attemptsEl = document.getElementById('memoryAttemptsCount');
+                if (attemptsEl) attemptsEl.textContent = String(memAttempts);
+
+                const [t1, t2] = memFlipped;
+                if (t1.dataset.icon === t2.dataset.icon) {
+                    t1.classList.add('matched');
+                    t2.classList.add('matched');
+                    memMatched++;
+                    memFlipped = [];
+                    const matchedEl = document.getElementById('memoryMatchedCount');
+                    if (matchedEl) matchedEl.textContent = String(memMatched);
+
+                    if (memMatched === memoryIcons.length) {
+                        recordGameOutcome(true, '🎉 رائع! طابقت جميع البطاقات بنجاح!', 3);
+                    }
+                } else {
+                    memLocked = true;
+                    recordGameOutcome(false, '💫 البطاقتان مختلفتان، حاول مرة أخرى!', 0);
+                    setTimeout(() => {
+                        t1.classList.remove('flipped');
+                        t2.classList.remove('flipped');
+                        memFlipped = [];
+                        memLocked = false;
+                    }, 750);
+                }
+            }
+        }
+
+        // =======================================================
+        // اللعبة 2: فرقعة البالونات (Balloon Pop)
+        // =======================================================
+        const balloonSpecs = [
+            { label: '🎈 أحمر', emoji: '🎈', bg: 'bg-red-100 border-red-400 text-red-800', key: 'red' },
+            { label: '🎈 أزرق', emoji: '🎈', bg: 'bg-sky-100 border-sky-400 text-sky-800', key: 'blue' },
+            { label: '🎈 أخضر', emoji: '🎈', bg: 'bg-emerald-100 border-emerald-400 text-emerald-800', key: 'green' },
+            { label: '🎈 أصفر', emoji: '🎈', bg: 'bg-amber-100 border-amber-400 text-amber-800', key: 'yellow' }
+        ];
+        let balloonPoints = 0;
+        let currentBalloonTarget = balloonSpecs[0];
+
+        function initBalloonGame() {
+            balloonPoints = 0;
+            const ptsEl = document.getElementById('balloonPoints');
+            if (ptsEl) ptsEl.textContent = '0';
+            spawnBalloonRound();
+        }
+
+        function spawnBalloonRound() {
+            const grid = document.getElementById('balloonsGrid');
+            const targetLabel = document.getElementById('balloonTargetLabel');
+            if (!grid) return;
+
+            currentBalloonTarget = balloonSpecs[Math.floor(Math.random() * balloonSpecs.length)];
+            if (targetLabel) targetLabel.textContent = currentBalloonTarget.label;
+
+            const items = [];
+            for (let i = 0; i < 8; i++) {
+                const spec = i === 0 ? currentBalloonTarget : balloonSpecs[Math.floor(Math.random() * balloonSpecs.length)];
+                items.push(spec);
+            }
+            items.sort(() => Math.random() - 0.5);
+
+            grid.innerHTML = items.map(spec => `
+                <button type="button" onclick="popBalloonItem('${spec.key}', this)" class="kid-btn ${spec.bg} border-4 rounded-3xl p-4 flex flex-col items-center justify-center gap-1">
+                    <span class="text-5xl">🎈</span>
+                    <span class="font-black text-sm">${spec.label.replace('🎈 ', '')}</span>
+                </button>
+            `).join('');
+        }
+
+        function popBalloonItem(key, btn) {
+            if (key === currentBalloonTarget.key) {
+                balloonPoints += 10;
+                const ptsEl = document.getElementById('balloonPoints');
+                if (ptsEl) ptsEl.textContent = String(balloonPoints);
+                btn.innerHTML = '<span class="text-5xl">💥</span><span class="font-black text-sm">ممتاز!</span>';
+
+                if (balloonPoints >= 40) {
+                    recordGameOutcome(true, '🎈🎉 فوز رائع في فرقعة البالونات! جمعت 40 نقطة!', 3);
+                    balloonPoints = 0;
+                    const ptsEl2 = document.getElementById('balloonPoints');
+                    if (ptsEl2) ptsEl2.textContent = '0';
+                }
+                setTimeout(spawnBalloonRound, 320);
+            } else {
+                btn.innerHTML = '<span class="text-4xl">❌</span><span class="font-black text-xs">ليس هذا</span>';
+                recordGameOutcome(false, '💫 هذا ليس البالون المطلوب، ركّز على اللون المطلوب!', 0);
+                setTimeout(spawnBalloonRound, 450);
+            }
+        }
+
+        // =======================================================
+        // اللعبة 3: تحدي الألغاز (Riddles Challenge)
+        // =======================================================
+        const riddlesList = [
+            {
+                icon: '📅',
+                question: 'في أي شهر نحتفل باليوم العالمي للطفل؟',
+                options: ['نوفمبر (تشرين الثاني)', 'يناير', 'يوليو', 'مايو'],
+                answer: 0
+            },
+            {
+                icon: '🌈',
+                question: 'كم عدد ألوان قوس قزح؟',
+                options: ['4 ألوان', '7 ألوان', '2 لونان', '9 ألوان'],
+                answer: 1
+            },
+            {
+                icon: '📚',
+                question: 'أين نتعلم القراءة والكتابة مع المعلمة والأصدقاء؟',
+                options: ['في المدرسة', 'في المرآب', 'في المستودع', 'في المصعد'],
+                answer: 0
+            },
+            {
+                icon: '🍎',
+                question: 'أي طعام يساعد جسم الطفل على النمو والقوة؟',
+                options: ['الفواكه والخضروات', 'الحلوى وحدها', 'المشروبات الغازية', 'لا شيء'],
+                answer: 0
+            },
+            {
+                icon: '🤝',
+                question: 'ما أجمل صفة تجمع بين الأطفال في اللعب؟',
+                options: ['التعاون والصداقة', 'الخصام', 'الأنانية', 'الإهمال'],
+                answer: 0
+            }
+        ];
+        let riddleIdx = 0;
+
+        function renderRiddle() {
+            const item = riddlesList[riddleIdx % riddlesList.length];
+            const numEl = document.getElementById('riddleNumber');
+            const iconEl = document.getElementById('riddleIcon');
+            const textEl = document.getElementById('riddleText');
+            const choicesEl = document.getElementById('riddleChoices');
+
+            if (numEl) numEl.textContent = String((riddleIdx % riddlesList.length) + 1);
+            if (iconEl) iconEl.textContent = item.icon;
+            if (textEl) textEl.textContent = item.question;
+            if (!choicesEl) return;
+
+            choicesEl.innerHTML = item.options.map((opt, idx) => `
+                <button type="button" onclick="answerRiddle(${idx})" class="kid-btn bg-white hover:bg-amber-100 text-slate-800 font-black text-base md:text-lg p-4 rounded-2xl border-2 border-amber-300">
+                    ${escapeText(opt)}
+                </button>
+            `).join('');
+        }
+
+        function answerRiddle(chosenIdx) {
+            const item = riddlesList[riddleIdx % riddlesList.length];
+            if (chosenIdx === item.answer) {
+                recordGameOutcome(true, '🌟 إجابة صحيحة وموفقة في تحدي الألغاز!', 2);
+                riddleIdx++;
+                setTimeout(renderRiddle, 650);
+            } else {
+                recordGameOutcome(false, '💫 إجابة غير صحيحة، حاول مرة أخرى في اللغز!', 0);
+            }
+        }
+
+        // =======================================================
+        // اللعبة 4: مرسم التلوين الحر (Kids Canvas)
+        // =======================================================
+        const paintCanvas = document.getElementById('kidsPaintCanvas');
+        const paintCtx = paintCanvas ? paintCanvas.getContext('2d') : null;
+        let currentBrushColor = '#EC4899';
+        let currentBrushSize = 8;
+        let isEraserMode = false;
+        let isDrawingNow = false;
+
+        function resizeKidsCanvas() {
+            if (!paintCanvas || !paintCtx) return;
+            const rect = paintCanvas.getBoundingClientRect();
+            if (rect.width === 0 || rect.height === 0) return;
+            const temp = paintCtx.getImageData(0, 0, paintCanvas.width || 1, paintCanvas.height || 1);
+            paintCanvas.width = Math.floor(rect.width);
+            paintCanvas.height = Math.floor(rect.height);
+            paintCtx.lineCap = 'round';
+            paintCtx.lineJoin = 'round';
+            paintCtx.putImageData(temp, 0, 0);
+        }
+
+        function setCanvasColor(color) {
+            currentBrushColor = color;
+            isEraserMode = false;
+        }
+
+        function setCanvasBrush(size, eraser) {
+            currentBrushSize = size;
+            isEraserMode = Boolean(eraser);
+        }
+
+        function clearKidsCanvas() {
+            if (!paintCanvas || !paintCtx) return;
+            paintCtx.clearRect(0, 0, paintCanvas.width, paintCanvas.height);
+        }
+
+        function stampCanvasEmoji(emoji) {
+            if (!paintCanvas || !paintCtx) return;
+            paintCtx.font = '44px Tajawal, sans-serif';
+            const x = Math.random() * Math.max(60, paintCanvas.width - 90) + 20;
+            const y = Math.random() * Math.max(60, paintCanvas.height - 90) + 50;
+            paintCtx.fillText(emoji, x, y);
+        }
+
+        function finishDrawingCelebration() {
+            recordGameOutcome(true, '🎨🎉 ما أجمل رسمتك! أحسنت يا فنان الطفولة!', 3);
+        }
+
+        function getCanvasPoint(e) {
+            const rect = paintCanvas.getBoundingClientRect();
+            const src = e.touches && e.touches[0] ? e.touches[0] : e;
+            return {
+                x: src.clientX - rect.left,
+                y: src.clientY - rect.top
+            };
+        }
+
+        if (paintCanvas && paintCtx) {
+            paintCanvas.addEventListener('pointerdown', (e) => {
+                isDrawingNow = true;
+                const pt = getCanvasPoint(e);
+                paintCtx.beginPath();
+                paintCtx.moveTo(pt.x, pt.y);
+            });
+            paintCanvas.addEventListener('pointermove', (e) => {
+                if (!isDrawingNow) return;
+                const pt = getCanvasPoint(e);
+                paintCtx.strokeStyle = isEraserMode ? '#FFFFFF' : currentBrushColor;
+                paintCtx.lineWidth = currentBrushSize;
+                paintCtx.lineTo(pt.x, pt.y);
+                paintCtx.stroke();
+            });
+            window.addEventListener('pointerup', () => {
+                isDrawingNow = false;
+            });
+        }
+
+        // =======================================================
+        // اللعبة 5: صيد النجوم والهدايا (Catch Stars & Gifts)
+        // =======================================================
+        let catchPoints = 0;
+        let catchRound = 1;
+
+        function initCatchGridGame() {
+            catchPoints = 0;
+            catchRound = 1;
+            const ptsEl = document.getElementById('catchPointsDisplay');
+            const rndEl = document.getElementById('catchRoundDisplay');
+            if (ptsEl) ptsEl.textContent = '0';
+            if (rndEl) rndEl.textContent = '1';
+            renderCatchBoard();
+        }
+
+        function renderCatchBoard() {
+            const board = document.getElementById('catchGridBoard');
+            if (!board) return;
+
+            const rewards = ['⭐', '🎁', '🎈'];
+            const hazards = ['🪨', '⚡'];
+            const cells = [];
+
+            for (let i = 0; i < 12; i++) {
+                const isHazard = i % 4 === 3;
+                const icon = isHazard
+                    ? hazards[Math.floor(Math.random() * hazards.length)]
+                    : rewards[Math.floor(Math.random() * rewards.length)];
+                cells.push({ icon, isHazard });
+            }
+            cells.sort(() => Math.random() - 0.5);
+
+            board.innerHTML = cells.map(cell => `
+                <button type="button" onclick="tapCatchCell(${cell.isHazard}, this)" class="kid-btn bg-white hover:bg-emerald-100 border-4 ${cell.isHazard ? 'border-slate-300' : 'border-amber-300'} rounded-2xl p-4 text-4xl">
+                    ${cell.icon}
+                </button>
+            `).join('');
+        }
+
+        function tapCatchCell(isHazard, btn) {
+            if (isHazard) {
+                btn.textContent = '💥';
+                recordGameOutcome(false, '💫 اصطدمت بعقبة! احذر العقبات واصطد النجوم والهدايا!', 0);
+                setTimeout(renderCatchBoard, 400);
+            } else {
+                catchPoints += 10;
+                btn.textContent = '✨';
+                const ptsEl = document.getElementById('catchPointsDisplay');
+                if (ptsEl) ptsEl.textContent = String(catchPoints);
+
+                if (catchPoints >= 40) {
+                    recordGameOutcome(true, '⭐🎁 فوز رائع في صيد النجوم والهدايا!', 3);
+                    catchPoints = 0;
+                    catchRound++;
+                    if (ptsEl) ptsEl.textContent = '0';
+                    const rndEl = document.getElementById('catchRoundDisplay');
+                    if (rndEl) rndEl.textContent = String(catchRound);
+                }
+                setTimeout(renderCatchBoard, 320);
+            }
+        }
+
+        // =======================================================
+        // اللعبة 6: ترتيب الألوان والأنماط (Color & Pattern Sequence)
+        // =======================================================
+        const patternLevels = [
+            { seq: ['🔴', '🟡', '🔵'], pool: ['🔴', '🟡', '🔵', '🟢'] },
+            { seq: ['⭐', '🎈', '🌈', '⭐'], pool: ['⭐', '🎈', '🌈', '📚'] },
+            { seq: ['🟢', '🟣', '🟡', '🟢'], pool: ['🟢', '🟣', '🟡', '🔴'] },
+            { seq: ['🎨', '📚', '🧸', '🎈'], pool: ['🎨', '📚', '🧸', '🎈'] }
+        ];
+        let patternLevelIdx = 0;
+        let patternUserPicked = [];
+
+        function initPatternSequenceGame() {
+            patternUserPicked = [];
+            const level = patternLevels[patternLevelIdx % patternLevels.length];
+            const lvlEl = document.getElementById('patternLevelDisplay');
+            const targetRow = document.getElementById('patternTargetRow');
+            const ansRow = document.getElementById('patternAnswerRow');
+            const optRow = document.getElementById('patternOptionsRow');
+
+            if (lvlEl) lvlEl.textContent = String((patternLevelIdx % patternLevels.length) + 1);
+            if (targetRow) {
+                targetRow.innerHTML = level.seq.map(sym => `
+                    <span class="w-12 h-12 rounded-2xl bg-pink-50 border-2 border-pink-200 flex items-center justify-center text-3xl">${sym}</span>
+                `).join('');
+            }
+            if (ansRow) {
+                ansRow.innerHTML = '<span class="text-sm font-bold text-pink-800">اختر الرموز بالترتيب...</span>';
+            }
+            if (optRow) {
+                const shuffled = [...level.pool].sort(() => Math.random() - 0.5);
+                optRow.innerHTML = shuffled.map(sym => `
+                    <button type="button" onclick="pickPatternSymbol('${sym}')" class="kid-btn bg-white hover:bg-pink-100 border-2 border-pink-300 rounded-2xl w-14 h-14 text-3xl">
+                        ${sym}
+                    </button>
+                `).join('');
+            }
+        }
+
+        function pickPatternSymbol(sym) {
+            const level = patternLevels[patternLevelIdx % patternLevels.length];
+            patternUserPicked.push(sym);
+
+            const ansRow = document.getElementById('patternAnswerRow');
+            if (ansRow) {
+                ansRow.innerHTML = patternUserPicked.map(s => `
+                    <span class="w-12 h-12 rounded-2xl bg-white border-2 border-pink-300 flex items-center justify-center text-3xl">${s}</span>
+                `).join('');
+            }
+
+            const step = patternUserPicked.length - 1;
+            if (patternUserPicked[step] !== level.seq[step]) {
+                recordGameOutcome(false, '💫 الترتيب غير صحيح، أعد ترتيب النمط من البداية!', 0);
+                setTimeout(initPatternSequenceGame, 500);
+                return;
+            }
+
+            if (patternUserPicked.length === level.seq.length) {
+                recordGameOutcome(true, '🌈🎉 ممتاز! رتّبت النمط بشكل صحيح!', 3);
+                patternLevelIdx++;
+                setTimeout(initPatternSequenceGame, 700);
+            }
+        }
+
+        // =======================================================
+        // اللعبة 7: اختبار المعلومات السريع (Quick Kids Quiz)
+        // =======================================================
+        const quickQuizItems = [
+            {
+                icon: '🌍',
+                question: 'لماذا نحتفل باليوم العالمي للطفل؟',
+                options: ['للاحتفاء بالأطفال وحقوقهم', 'لتعطيل المدارس فقط', 'لإغلاق الحدائق', 'لا سبب'],
+                answer: 0
+            },
+            {
+                icon: '🛡️',
+                question: 'من حق الطفل أن يعيش في بيئة تتسم بـ:',
+                options: ['الأمان والمحبة والرعاية', 'الإهمال', 'الضوضاء', 'الخطر'],
+                answer: 0
+            },
+            {
+                icon: '🌱',
+                question: 'ماذا تحتاج النباتات لكي تنمو وتخضرّ؟',
+                options: ['الماء وضوء الشمس', 'الورق فقط', 'الرمال الجافة فقط', 'الظلام الدائم'],
+                answer: 0
+            },
+            {
+                icon: '💬',
+                question: 'كيف نحترم رأي صديقنا في الفصل؟',
+                options: ['نستمع إليه بأدب واحترام', 'نقاطعه دائماً', 'نسخر منه', 'نتجاهله'],
+                answer: 0
+            },
+            {
+                icon: '🎨',
+                question: 'أي نشاط ينمّي الإبداع والخيال لدى الطفل؟',
+                options: ['الرسم والقراءة واللعب', 'كسر الألعاب', 'إزعاج الآخرين', 'ترك الكتب'],
+                answer: 0
+            }
+        ];
+        let quickQuizIdx = 0;
+
+        function renderQuickQuiz() {
+            const item = quickQuizItems[quickQuizIdx % quickQuizItems.length];
+            const numEl = document.getElementById('quickQuizNumber');
+            const iconEl = document.getElementById('quickQuizIcon');
+            const qEl = document.getElementById('quickQuizQuestion');
+            const choicesEl = document.getElementById('quickQuizChoices');
+
+            if (numEl) numEl.textContent = String((quickQuizIdx % quickQuizItems.length) + 1);
+            if (iconEl) iconEl.textContent = item.icon;
+            if (qEl) qEl.textContent = item.question;
+            if (!choicesEl) return;
+
+            choicesEl.innerHTML = item.options.map((opt, idx) => `
+                <button type="button" onclick="answerQuickQuiz(${idx})" class="kid-btn bg-white hover:bg-indigo-100 text-slate-800 font-black text-base md:text-lg p-4 rounded-2xl border-2 border-indigo-300">
+                    ${escapeText(opt)}
+                </button>
+            `).join('');
+        }
+
+        function answerQuickQuiz(chosenIdx) {
+            const item = quickQuizItems[quickQuizIdx % quickQuizItems.length];
+            if (chosenIdx === item.answer) {
+                recordGameOutcome(true, '⚡🎉 أحسنت! إجابة سريعة وصحيحة!', 2);
+                quickQuizIdx++;
+                setTimeout(renderQuickQuiz, 650);
+            } else {
+                recordGameOutcome(false, '💫 حاول مرة أخرى يا بطل، اختر الإجابة الأنسب!', 0);
+            }
+        }
+
+        // بطاقات حقوق الطفل
+        function tapRightCard(card) {
+            addGlobalStars(1);
+            celebrateWithConfetti();
+            card.classList.add('scale-105');
+            setTimeout(() => card.classList.remove('scale-105'), 260);
+        }
+
+        // =======================================================
+        // التهيئة عند تحميل الصفحة
+        // =======================================================
+        window.addEventListener('DOMContentLoaded', () => {
+            loadContestantsData();
+            renderActiveContestantOptions();
+            renderContestantsCards();
+            highlightSongVerse(0);
+
+            initMemoryGame();
+            initBalloonGame();
+            renderRiddle();
+            initCatchGridGame();
+            initPatternSequenceGame();
+            renderQuickQuiz();
+            resizeKidsCanvas();
+        });
+
+        window.addEventListener('resize', resizeKidsCanvas);
+    </script>
+</body>
+</html>
